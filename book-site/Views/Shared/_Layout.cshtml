@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" href="~/css/catalog.css">
+    <link rel="stylesheet" href="~/css/information.css">
+    <link rel="stylesheet" href="~/css/product.css">
+    <link rel="stylesheet" href="~/css/basket.css">
+</head>
+<body>
+    @Html.Partial("Partial/Header")
+    <div>
+        @RenderBody()
+    </div>
+    @Html.Partial("Partial/Footer")
+    <script src="~/js/script.js"></script>
+</body>
+</html>

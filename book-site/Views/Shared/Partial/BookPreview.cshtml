@@ -1,0 +1,15 @@
+﻿@model book_site.Data.Models.Book
+
+    <div class="preview">
+        <div class="content-top-popular-content">
+            <a href="~/Home/BookId/@Model.Id"><img src="~/@Model.Img" alt="Book"></a>
+            <div class="content-top-popular-letters">
+                <p>@Model.Mark</p>
+            </div>
+        </div>
+        <div class="preview-info">
+            <div class="price">@Model.Price</div>
+            <div class="name-book"><a href="#">@Model.NameBook</a></div>
+            <div class="author"><a href="#">@Model.Author.NameAuthor</a></div>
+        </div>
+    </div>

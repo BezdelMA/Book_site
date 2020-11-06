@@ -1,0 +1,63 @@
+﻿@using book_site.Data.Models
+
+<div class="catalog__content">
+    <div class="catalog__filtre">
+        <nav class="filtre">
+            <form asp-controller="Catalog" asp-action="Filter" method="post">
+                <div class="drop__button" onclick="My_Function()">Жанр</div>
+                <div class="dropdown" id="My_dropdown">
+                    <div>
+                        @{
+                            foreach (var item in Model.Genres)
+                            {
+                                <label for="zhanr__check_@item.Id"><input type="checkbox" id="zhanr__check_@item.Id" name="genres" value="@item.NameGenre">@item.NameGenre</label><br>
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="drop__button" onclick="My_Function_2()">Издательство</div>
+                <div class="dropdown" id="My_dropdown_2">
+                    <div>
+                        @{
+                            foreach (var item in Model.Books)
+                            {
+                                <label for="publishing__check_1"><input type="checkbox" id="publishing__check_1">@item.PublishingHouse</label><br>
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="drop__button" onclick="My_Function_3()">Автор</div>
+                <div class="dropdown" id="My_dropdown_3">
+                    <div>
+                        @{
+                            foreach (var item in Model.Authors)
+                            {
+                                <label for="authors__check_@item.Id"><input type="checkbox" name="authors" id="authors__check_@item.Id" value="@item.NameAuthor">@item.NameAuthor</label><br>
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="drop__button" onclick="My_Function_4()">Год издания</div>
+                <div class="dropdown" id="My_dropdown_4">
+                    <input type="range" min="2000" max="2020" step="1" value="2020">
+                </div>
+                <div class="drop__button" onclick="My_Function_5()">Цена</div>
+                <div class="dropdown" id="My_dropdown_5">
+                    <input type="range" min="0" max="15000" step="100" value="1500">
+                </div>
+                <input type="submit" class="filter" value="Применить" />
+            </form>
+        </nav>
+    </div>
+    <div class="catalog__book">
+        <div class="catalog__preview">
+            @{
+                foreach (Book item in Model.Books)
+                {
+                    @Html.Partial("Partial/BookPreview", item)
+                }
+            }
+        </div>
+    </div>
+</div>
+<hr>

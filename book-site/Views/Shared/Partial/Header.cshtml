@@ -1,0 +1,69 @@
+﻿
+<article>
+    <div class="header-top">
+        <p>Мир книг</p>
+    </div>
+    <nav class="first-menu">
+        <div class="first-menu-left">
+            <a class="slogan" href="~/Home/Index">
+                <span>Официальный магазин книг г. Подольск</span>
+            </a>
+            <a class="first-menu-content" href="information.html">
+                <span>О нас</span>
+            </a>
+            <a class="first-menu-content" href="information.html">
+                <span>Доставка и оплата</span>
+            </a>
+            <a class="first-menu-content" href="information.html">
+                <span>Оптовым клиентам</span>
+            </a>
+            <a class="first-menu-content" href="information.html">
+                <span>Программа лояльности</span>
+            </a>
+        </div>
+        <div class="first-menu-right">
+            <a class="first-menu-right-content" href="tel:+79060612448">
+                <span>8 (906) 061-24-48</span>
+            </a>
+            <a class="first-menu-right-content" href="#">
+                <span>Контакты</span>
+            </a>
+        </div>
+    </nav>
+    <div class="stock">
+        <a href="#"><img src="~/img/stock.jpg" alt="Баннер/Акция" title="Банер/Акция"></a>
+    </div>
+    <div class="header-middle">
+        <form asp-controller="Catalog" asp-action="Search" method="get" class="search">
+            <a asp-controller="Home" asp-action="Index"><img src="~/img/logo.jpg" alt="Логотип" title="logo"></a>
+            <input type="text" name="search" placeholder="Введите название книги, имя автора, жанр">
+            <input type="submit" value="Найти">
+        </form>
+        <div class="header-middle-right-content">
+            <div class="authorization">
+                <a href="#">
+                    <span>Вход</span>
+                </a>
+                <span>/</span>
+                <a href="#">
+                    <span>Регистрация</span>
+                </a>
+            </div>
+            <div class="basket">
+                <a href="~/ShopBasket/Basket"><img src="~/img/basket.png" alt="Корзина" title="Корзина"></a>
+            </div>
+        </div>
+    </div>
+    <div class="header-navigation">
+        <nav class="catalog">
+            <a href="~/Catalog">Каталог</a>
+            <a href="~/Catalog/Books/Stock">Акции</a>
+            <a href="~/Catalog/Books/New">Новинки</a>
+            <a href="~/Catalog/Books/Favorite">Бестселлеры</a>
+            <a href="catalog.html">Подборки</a>
+            <a href="catalog.html">Рекомендации</a>
+            <a href="catalog.html">Авторы</a>
+            <a href="catalog.html">Блог</a>
+        </nav>
+        <hr>
+    </div>

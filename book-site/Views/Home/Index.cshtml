@@ -1,0 +1,71 @@
+﻿@using  book_site.Data.Models
+
+    <div class="content-top-new">
+        <div class="new-book-title">
+            <div class="new-book">
+                <a href="~/Catalog/Books/New">
+                    <p>Новинки</p>
+                </a>
+            </div>
+            <div class="new-book-all">
+                <a href="~/Catalog/Books/New">
+                    <p>Все новинки</p>
+                </a>
+            </div>
+        </div>
+        <div class="content-top-new-all">
+            @{
+                foreach (Book book in Model.NewBooks)
+                {
+                    @Html.Partial("Partial/BookPreview", book)
+                }
+            }
+        </div>
+    </div>
+    <hr>
+    <div class="content-top-new">
+        <div class="new-book-title">
+            <div class="new-book">
+                <a href="~/Catalog/Books/Stock">
+                    <p>Акции</p>
+                </a>
+            </div>
+            <div class="new-book-all">
+                <a href="~/Catalog/Books/Stock">
+                    <p>Все акции</p>
+                </a>
+            </div>
+        </div>
+        <div class="content-top-discount-all">
+            @{
+                foreach (Book book in Model.StockBooks)
+                {
+                    @Html.Partial("Partial/BookPreview", book)
+                }
+            }
+        </div>
+    </div>
+    <hr>
+    <div class="content-top-new">
+        <div class="new-book-title">
+            <div class="new-book">
+                <a href="~/Catalog/Books/Favorite">
+                    <p>Самые покупаемые</p>
+                </a>
+            </div>
+            <div class="new-book-all">
+                <a href="~/Catalog/Books/Favorite">
+                    <p>Все самые покупаемые</p>
+                </a>
+            </div>
+        </div>
+        <div class="content-top-popular-all">
+            @{
+                foreach (Book book in Model.FavoriteBooks)
+                {
+                    @Html.Partial("Partial/BookPreview", book)
+                }
+            }
+        </div>
+    </div>
+    <hr>

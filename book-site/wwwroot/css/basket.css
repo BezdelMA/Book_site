@@ -1,0 +1,55 @@
+.table__basket {
+    width: 100%;
+}
+
+.table__basket > thead {
+    background-color: #9a2210;
+    color: #eeeeee;
+    font-size: 1.7em;
+}
+
+.table__basket > thead > tr > th {
+    padding: 5px 10px;
+    text-align: center;
+    border-left: 3px solid #888;
+}
+
+.table__basket > tbody > tr > td, table > tbody > tr > th {
+    padding: 15px 0;
+}
+
+.table__basket > tbody > tr > td > a > img {
+    height: 200px;
+}
+
+.table__basket > tbody > tr > td {
+    text-align: center;
+}
+
+.table__basket > tbody > tr > td > input[type="text"] {
+    width: 20px;
+    text-align: center;
+}
+
+.table__basket .image {
+    width: 20%;
+}
+
+.table__basket .annotation {
+    width: 50%;
+}
+
+.table__basket .itog {
+    font-size: 1.5em;
+    padding-top: 10px;
+}
+
+.table__basket .itog > th {
+    border-top: 3px solid #999999;
+    text-align: center;
+}
+
+.table__basket .itog > .text {
+    text-align: left;
+    padding: 0 0 0 50px;
+}

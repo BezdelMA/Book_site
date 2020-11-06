@@ -1,0 +1,46 @@
+﻿
+<table class="table__basket">
+    <thead>
+        <tr>
+            <th>Товар</th>
+            <th>Описание товара</th>
+            <th>Количество товара</th>
+            <th>Стоимость</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var item in Model.ShopBasket.ListBookBasket)
+            {
+                <tr>
+                    <td class="image">
+                        <a href="~/Home/BookId/@item.Book.Id">
+                            <img src="../@item.Book.Img" alt="">
+                        </a>
+                    </td>
+                    <td class="annotation">
+                        <p>@item.Book.Annotation</p>
+                    </td>
+                    <td class="counter">
+                        <input type="submit" value="-">
+                        <input type="text" value="@item.Counter">
+                        <input type="submit" value="+">
+                    </td>
+                    <td>@item.Price</td>
+                    <td class="remove">
+                        <input type="submit" value="Удалить">
+                    </td>
+                </tr>
+            }
+            <tr class="itog">
+                <th colspan="2" class="text">Итого</th>
+                <th>@Model.ShopBasket.Counter</th>
+                <th>@Model.ShopBasket.AllPrice</th>
+                <th></th>
+            </tr>
+
+        }
+    </tbody>
+</table>
+<a class="btn btn-danger mb-5" asp-controller="Order" asp-action="Checkout">Оплатить</a>
