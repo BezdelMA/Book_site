@@ -1,0 +1,91 @@
+.catalog__content {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+}
+
+.catalog__filtre {
+    width: 300px;
+}
+
+.catalog__book {
+    margin: 0 0 0 auto;
+    width: 70%;
+}
+
+.catalog__preview {
+    margin: 0 0 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.preview {
+    margin: 0 3% 0 0;
+}
+
+.drop__button {
+    font-size: 1.7em;
+    text-align: center;
+    padding: 7px 0 0 0;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    position: relative;
+    background-color: rgb(235, 230, 200);
+    font-size: 1.2em;
+    padding: 0 0 0 50px;
+}
+
+.dropdown > a {
+    display: block;
+}
+
+.show {
+    display: block;
+}
+
+.drop__button, .drop__button:hover, .drop__button:active, .drop__button:focus {
+    width: 100%;
+    height: 50px;
+    outline: none;
+}
+
+.dropdown > form {
+    margin: 0 0 0 auto;
+    padding: 0 0 0 20%;
+    font-size: 1.3em;
+}
+
+input[type="checkbox"] {
+    margin: 10px 20px 0 0;
+}
+
+input[type="range"] {
+    width: 95%;
+}
+
+hr {
+    margin: 0 3px;
+}
+
+.filter {
+    background-color: inherit;
+    margin: 10px auto;
+    display: block;
+    width: 70%;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 1.3em;
+    color: #FFF;
+    font-weight: 800;
+    background: linear-gradient(15deg, #F33, #F99);
+    border-radius: 15px;
+}
+
+.filter:hover {
+    background: linear-gradient(15deg, #F99, #F33);
+}

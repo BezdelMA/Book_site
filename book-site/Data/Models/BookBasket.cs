@@ -9,11 +9,7 @@ namespace book_site.Data.Models
     {
         public int Id { get; set; }
         public Book Book { get; set; }
-        public int Price {
-            get;
-            //return (Book.Price * Counter);
-            set;  
-        }
+        public int Price { get; set; }
         public int Counter { get; set; }
         public string BasketBookId { get; set; }
     }

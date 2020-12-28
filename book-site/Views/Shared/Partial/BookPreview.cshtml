@@ -8,8 +8,8 @@
             </div>
         </div>
         <div class="preview-info">
-            <div class="price">@Model.Price</div>
-            <div class="name-book"><a href="#">@Model.NameBook</a></div>
-            <div class="author"><a href="#">@Model.Author.NameAuthor</a></div>
+            <div class="price">@Model.Price р.</div>
+            <div class="name-book"><a asp-controller="Catalog" asp-action="Search" asp-route-search="@Model.NameBook">@Model.NameBook</a></div>
+            <div class="author"><a asp-controller="Catalog" asp-action="Search" asp-route-search="@Model.Author.NameAuthor">@Model.Author.NameAuthor</a></div>
         </div>
     </div>

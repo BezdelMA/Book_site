@@ -9,6 +9,7 @@ namespace book_site.Data.Models
     {
         public int Id { get; set; }
         public string NameGenre { get; set; }
+        public string NormalizedNameGenre { get; set; }
         public IEnumerable<Book> BooksGenre { get; set; }
     }
 }

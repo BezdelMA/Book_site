@@ -1,0 +1,88 @@
+﻿@model book_site.Areas.Admin.ViewModel.AllProductViewModel
+
+<p>
+    <a asp-action="CreateProduct">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NameBook)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Annotation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Img)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PublishingHouse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsNew)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsFavorite)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsStock)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.AllProducts) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameBook)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td>
+                @Html.Raw(item.Annotation)
+            </td>
+            <td class="image">
+                <img height="100" src="../@item.Img" alt="">
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublishingHouse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsNew)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsFavorite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsStock)
+            </td>
+            <td>
+                <a asp-action="EditProduct" asp-route-BookId="@item.Id">Изменить</a> |
+                <a asp-action="DeleteProduct" asp-route-BookId="@item.Id">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

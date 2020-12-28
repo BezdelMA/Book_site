@@ -9,6 +9,7 @@ namespace book_site.Data.Models
     {
         public int Id { get; set; }
         public string NameAuthor { get; set; }
+        public string NormalizedNameAuthor { get; set; }
         public List<Book> BooksAuthor { get; set; }
     }
 }

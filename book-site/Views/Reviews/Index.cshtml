@@ -1,0 +1,30 @@
+﻿@model IEnumerable<book_site.ViewModel.ReviewsViewModel>
+
+<p>
+    <a asp-action="AddReviews" class="btn btn-primary mt-3">Добавить отзыв</a>
+</p>
+
+<style>
+
+</style>
+
+<div class="reviews">
+    @{
+        foreach (var item in Model)
+        {
+        <div class="container">
+            <div class="flex">
+                <img src="~/img/IconPeaple.png" alt="Avatar" style="width: 90px">
+                <p><span>@item.UserName</span> @item.TitleReviews.</p>
+            </div>
+            <p>@item.BodyReviews</p>
+            <p>@item.Date</p>
+            @if (item.AbilityToDeleteAndEdit == true)
+            {
+            <a asp-action="DeleteReviews" asp-route-idReviews="@item.Id">Удалить</a>
+            <a asp-action="EditReviews" asp-route-idReviews="@item.Id">Редактировать</a>
+            }
+        </div>
+        }
+    }
+</div>

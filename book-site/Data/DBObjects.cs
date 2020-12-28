@@ -1,5 +1,6 @@
 ﻿using book_site.Data.Models;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -10,24 +11,75 @@ namespace book_site.Data
 {
     public class DBObjects
     {
-        public static void Initial(AppDBContent appDBContent)
+        private readonly AppDBContent appDBContent;
+        private readonly UserManager<User> userManager;
+        private readonly RoleManager<Role> roleManager;
+
+        public DBObjects(AppDBContent _appDBContent, UserManager<User> _userManager, RoleManager<Role> _roleManager)
+        {
+            appDBContent = _appDBContent;
+            userManager = _userManager;
+            roleManager = _roleManager;
+        }
+        public void Initial() => InitialAsync().Wait();
+
+        public async Task InitialAsync()
+        {
+            await InitialIdentity().ConfigureAwait(false);
+            await InitialProductAsync().ConfigureAwait(false);
+
+            appDBContent.SaveChanges();
+        }
+
+        private  async Task InitialProductAsync()
         {
             if (!appDBContent.Genres.Any())
             {
-                appDBContent.AddRange(Genres.Select(obj => obj.Value));
+                await appDBContent.AddRangeAsync(Genres.Select(obj => obj.Value));
             }
 
             if (!appDBContent.Authors.Any())
             {
-                appDBContent.AddRange(Authors.Select(obj => obj.Value));
-            }
-            
-            if (!appDBContent.Books.Any())
-            {
-                appDBContent.AddRange(Books.Select(obj => obj.Value));
+                await appDBContent.AddRangeAsync(Authors.Select(obj => obj.Value));
             }
 
-            appDBContent.SaveChanges();
+            if (!appDBContent.Books.Any())
+            {
+                await appDBContent.AddRangeAsync(Books.Select(obj => obj.Value));
+            }
+        }
+
+        private async Task InitialIdentity()
+        {
+            if (!await roleManager.RoleExistsAsync(Role.Admin))
+            {
+                await roleManager.CreateAsync(new Role { Name = Role.Admin });
+            }
+
+            if (!await roleManager.RoleExistsAsync(Role.User))
+            {
+                await roleManager.CreateAsync(new Role { Name = Role.User });
+            }
+
+            if (await userManager.FindByNameAsync(User.Admin) is null)
+            {
+                var admin = new User
+                {
+                    UserName = "Admin"
+                };
+
+                var create_result = await userManager.CreateAsync(admin, User.AdminDefaultPassword);
+                if (create_result.Succeeded)
+                {
+                    await userManager.AddToRoleAsync(admin, Role.Admin);
+                }
+
+                else
+                {
+                    var errors = create_result.Errors.Select(e => e.Description);
+                    throw new InvalidOperationException($"Ошибка при создании пользователя: {string.Join(",", errors)}");
+                }
+            }
         }
 
         private static Dictionary<string, Genre> genre;
@@ -70,7 +122,7 @@ namespace book_site.Data
                         new Author{NameAuthor="5"}
                     };
                     author = new Dictionary<string, Author>();
-                    foreach(var item in list)
+                    foreach (var item in list)
                     {
                         author.Add(item.NameAuthor, item);
                     }

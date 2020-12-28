@@ -10,17 +10,17 @@
         <div class="picture"><a href="../@Model.BookById.Img"><img src="../@Model.BookById.Img" alt="Внутри убийцы"></a></div>
         <div class="description">
             <div class="description_preview_info">
-                Автор: <a href="#">@Model.BookById.Author.NameAuthor</a><br>
+                Автор: <a asp-controller="Catalog" asp-action="Search" asp-route-search="@Model.BookById.Author.NameAuthor">@Model.BookById.Author.NameAuthor</a><br>
                 Издательство: <a href="#">Эксмо, </a>@Model.BookById.Year<div class="br"></div>
-                Жанр: <a href="#">@Model.BookById.Genre.NameGenre</a><br>
+                Жанр: <a asp-controller="Catalog" asp-action="Search" asp-route-search="@Model.BookById.Genre.NameGenre">@Model.BookById.Genre.NameGenre</a><br>
                 <div class="annotation">
                     <h4>АННОТАЦИЯ</h4>
                     <div class="annotation_content">
-                        @Model.BookById.Annotation
+                        @Html.Raw(Model.BookById.Annotation)
                     </div>
                 </div>
             </div>
-            <div class="price">460 р.</div>
+            <div class="price">@Model.BookById.Price р.</div>
             <a asp-controller="ShopBasket" asp-action="AddToBasket" asp-route-id="@Model.BookById.Id"><input type="submit" value="Добавить в корзину"></a>
         </div>
     </div>
@@ -29,34 +29,27 @@
 <div class="content-top-new">
     <div class="new-book-title">
         <div class="new-book">
-            <a href="catalog.html">
+            <a asp-controller="Catalog" asp-action="Books" asp-route-filter="Favorite">
                 <p>Самые покупаемые</p>
             </a>
         </div>
         <div class="new-book-all">
-            <a href="catalog.html">
+            <a asp-controller="Catalog" asp-action="Books" asp-route-filter="Favorite">
                 <p>Все самые покупаемые</p>
             </a>
         </div>
     </div>
     <div class="content-top-popular-all">
         @{
-            foreach (var book in Model.FavoriteBooks)
+            int i = 0;
+            foreach (Book book in Model.FavoriteBooks)
             {
-                <div class="preview">
-                    <div class="content-top-popular-content">
-                        <a href="~/Books/BookId/@book.Id"><img src="../@book.Img" alt="Book"></a>
-                        <div class="content-top-popular-letters">
-                            <p>Популярная</p>
-                        </div>
-                    </div>
-                    <div class="preview-info">
-                        <div class="price">@book.Price</div>
-                        <div class="name-book"><a href="#">@book.NameBook</a></div>
-                        <div class="author"><a href="#">@book.AuthorId</a></div>
-                    </div>
-                </div>
-            }
+                if (i >= 4)
+                    break;
+                else
+                    @await Html.PartialAsync("Partial/BookPreview", book)
+                    i++;
+                }
         }
     </div>
 </div>

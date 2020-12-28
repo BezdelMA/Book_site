@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,11 +11,14 @@ namespace book_site.Data.Models
     {
         public int Id { get; set; }
         public string NameBook { get; set; }
+        public string NormalizedNameBook { get; set; }
         public int AuthorId { get; set; }
         public virtual Author Author { get; set; }
         public string Annotation { get; set; }
         public string Img { get; set; }
         public string PublishingHouse { get; set; }
+
+        [DataType(DataType.Currency)]
         public int Price { get; set; }
         public int Year { get; set; }
         public bool IsNew { get; set; }
@@ -25,11 +30,13 @@ namespace book_site.Data.Models
         public string Mark {
             get
             {
-                if (IsNew == true)
+                if (IsNew)
                     return "Новинка";
-                else if (IsStock == true)
+                else if (IsStock)
                     return "Акция";
-                else return "Популярная";
+                else if (IsFavorite)
+                    return "Популярная";
+                else return "";
             }
         }
     }

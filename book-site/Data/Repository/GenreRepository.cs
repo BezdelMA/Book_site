@@ -21,14 +21,30 @@ namespace book_site.Data.Repository
         public IEnumerable<Genre> Genres (IEnumerable<Book> filter)
         {
             List<Genre> _genres = new List<Genre>();
-            foreach(var item in filter)
+            if (filter is null)
+            { }
+
+            else
             {
-                if (!_genres.Contains(item.Genre))
+                foreach (var item in filter)
                 {
-                    _genres.Add(item.Genre);
+                    if (!_genres.Contains(item.Genre))
+                    {
+                        _genres.Add(item.Genre);
+                    }
                 }
             }
             return _genres;
+        }
+
+        public void AddGenre(string nameGenre)
+        {
+            appDBContent.Genres.Add(new Genre
+            {
+                NameGenre = nameGenre,
+                NormalizedNameGenre = nameGenre.ToUpper()
+            });
+            appDBContent.SaveChanges();
         }
     }
 }

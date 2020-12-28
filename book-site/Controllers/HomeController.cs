@@ -22,7 +22,7 @@ namespace book_site.Controllers
             _booksAuthor = booksAuthor;
         }
 
-        public ViewResult Index()
+        public IActionResult Index()
         {
             ViewBag.Title = "Мир книг | интернет-магазин книг г. Подольска | доставка по Подольску и Москве";
             BooksViewModel obj = new BooksViewModel();
@@ -32,12 +32,18 @@ namespace book_site.Controllers
             return View(obj);
         }
 
-        public ViewResult BookId(int id)
+        public IActionResult BookId(int id)
         {
             BooksViewModel obj = new BooksViewModel();
-            obj.BookById = _books.GetBookById(id);
-            obj.FavoriteBooks = _books.GetFavoriteBooks;
-            return View(obj);
+            var book = _books.GetBookById(id);
+            if (book is null)
+                return NotFound();
+            else
+            {
+                obj.BookById = book;
+                obj.FavoriteBooks = _books.GetFavoriteBooks;
+                return View(obj);
+            }
         }
     }
 }

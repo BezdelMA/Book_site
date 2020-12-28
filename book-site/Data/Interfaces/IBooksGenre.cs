@@ -11,5 +11,7 @@ namespace book_site.Data.Interfaces
         IEnumerable<Genre> AllGenres { get; }
 
         IEnumerable<Genre> Genres(IEnumerable<Book> filter);
+        
+        void AddGenre(string nameGenre);
     }
 }

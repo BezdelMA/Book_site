@@ -1,0 +1,96 @@
+﻿@model book_site.Areas.Admin.ViewModel.AllProductViewModel
+
+<h2>Добавление новой книги в базу данных</h2>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="CreateProduct" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NameBook" class="control-label"></label>
+                <input asp-for="NameBook" class="form-control" />
+                <span asp-validation-for="NameBook" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Author" class="control-label"></label>
+                <div style="display:flex">
+                    <select size="1" required name="authors" asp-for="Author" class="form-control">
+                        <option>Выберите автора</option>
+                        @{
+                            foreach (var item in Model.Authors)
+                            {
+                                <option value="@item.Id" name="authors">@item.NameAuthor</option>
+                            }
+                        }
+                    </select>
+                    <a asp-action="AddAuthor" class="btn btn-primary col-md-6">Добавить автора</a>
+                </div>
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Genre" class="control-label"></label>
+                <div style="display:flex">
+                    <select size="1" required name="genres" asp-for="Genre" class="form-control">
+                        <option>Выберите жанр</option>
+                        @{
+                            foreach (var item in Model.Genres)
+                            {
+                                <option value="@item.Id" name="genres" asp-for="Genre">@item.NameGenre</option>
+                            }
+                        }
+                    </select>
+                    <a asp-action="AddGenre" class="btn btn-primary col-md-6">Добавить жанр</a>
+                </div>
+                    <span asp-validation-for="Genre" class="text-danger"></span>
+                </div>
+            <div class="form-group">
+                <label asp-for="Annotation" class="control-label"></label>
+                <textarea id="annotation" asp-for="Annotation" class="form-control" ></textarea>
+                <span asp-validation-for="Annotation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImgFile" class="control-label"></label>
+                <input type="file" asp-for="ImgFile" class="form-control" />
+                <span asp-validation-for="ImgFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PublishingHouse" class="control-label"></label>
+                <input asp-for="PublishingHouse" class="form-control" />
+                <span asp-validation-for="PublishingHouse" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsNew" /> @Html.DisplayNameFor(model => model.IsNew)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsFavorite" /> @Html.DisplayNameFor(model => model.IsFavorite)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsStock" /> @Html.DisplayNameFor(model => model.IsStock)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

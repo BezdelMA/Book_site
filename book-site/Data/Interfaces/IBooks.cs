@@ -1,4 +1,5 @@
 ﻿using book_site.Data.Models;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,9 @@ namespace book_site.Data.Interfaces
         IEnumerable<Book> GetStockBooks { get; }
         IEnumerable<Book> GetNewBooks { get; }
         Book GetBookById(int bookId);
+        void CreateBook(Book book);
+        string UpLoadFile(IFormFile file);
+        void EditBook(Book book);
+        void DeleteBook(Book book);
     }
 }

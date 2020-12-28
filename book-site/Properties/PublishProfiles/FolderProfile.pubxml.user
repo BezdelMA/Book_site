@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Этот файл используется процессом публикации или упаковки вашего веб-проекта. Можно настроить поведение этого процесса,
+изменив этот файл MSBuild. Подробности см. на странице https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Обучение\C#\Book_site\book-site\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAq/At8eRbqUafK/vzm+x1CQAAAAACAAAAAAAQZgAAAAEAACAAAACiSVD1QJ1qg1m4BFn92EZh4Ljd7373dermkGIVy7eFqwAAAAAOgAAAAAIAACAAAAA2PSTAXg0SotEmgQVLOHLVGMNEk0AEEGOIcv6Qf6JV4YAAAAAyS3qw7OlPAEiX/ZDF3oXfiQQ/95pYRZm22YZuuii6ClXGgIa+9NyVW1i9SPPiUIg+yronEWJ2B/Y3O5yuPMZ9HcLsh6cyqowyKpvgay4/yY0ThKlAtkWSY9j1YbDkL4u9reYTEd87kbXC3SyNa0l3hM0FlA+qeiIOs4oW79OR5UAAAABzuHHR4m5sdjf4L2ZQcIOr5oFa6dRl+gpSFS6LDX2/JNV0WTeWnOyUN9uptlUdiSwwGfXG6xej7bMOegUWQMr0</EncryptedPassword>
+  </PropertyGroup>
+</Project>

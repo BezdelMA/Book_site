@@ -1,0 +1,11 @@
+﻿<div class="basket">
+    <a href="~/ShopBasket/Basket">
+        <img src="~/img/basket.png" alt="Корзина" title="Корзина">
+        @{
+            if (ViewBag.Count > 0)
+            {
+                <span>@ViewBag.Count</span>
+            }
+        }
+    </a>
+    </div>

@@ -10,7 +10,7 @@
                         @{
                             foreach (var item in Model.Genres)
                             {
-                                <label for="zhanr__check_@item.Id"><input type="checkbox" id="zhanr__check_@item.Id" name="genres" value="@item.NameGenre">@item.NameGenre</label><br>
+                                <label for="zhanr__check_@item.Id"><input type="checkbox" id="zhanr__check_@item.Id" name="genres" value="@item.Id">@item.NameGenre</label><br>
                             }
                         }
                     </div>
@@ -32,7 +32,7 @@
                         @{
                             foreach (var item in Model.Authors)
                             {
-                                <label for="authors__check_@item.Id"><input type="checkbox" name="authors" id="authors__check_@item.Id" value="@item.NameAuthor">@item.NameAuthor</label><br>
+                                <label for="authors__check_@item.Id"><input type="checkbox" name="authors" id="authors__check_@item.Id" value="@item.Id">@item.NameAuthor</label><br>
                             }
                         }
                     </div>
@@ -54,7 +54,7 @@
             @{
                 foreach (Book item in Model.Books)
                 {
-                    @Html.Partial("Partial/BookPreview", item)
+                    <partial name="Partial/BookPreview" model="@item" />
                 }
             }
         </div>

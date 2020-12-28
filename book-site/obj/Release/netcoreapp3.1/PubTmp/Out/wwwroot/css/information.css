@@ -1,0 +1,12 @@
+.header > h1{
+    font-size: 2em;
+    padding: 0 0 0 50px;
+}
+
+.info__content > p:first-letter{
+    padding: 0 0 0 50px;
+}
+
+.info__content > p{
+    text-align: justify;
+}

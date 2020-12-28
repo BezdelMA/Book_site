@@ -9,5 +9,8 @@ namespace book_site.Data.Interfaces
     public interface IAllOrders
     {
         void CreateOrder(Order order);
+        IEnumerable<Order> Orders { get; }
+
+        IEnumerable<OrderDetails> OrderDetails(int Id);
     }
 }

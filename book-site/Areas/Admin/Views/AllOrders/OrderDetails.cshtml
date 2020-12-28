@@ -1,0 +1,80 @@
+﻿@model IEnumerable<book_site.Areas.Admin.ViewModel.OrderDetailsViewModel>
+
+@{
+    Layout = "_Layout";
+}
+<div>@ViewBag.Title</div>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        № п/п
+                    </th>
+                    <th>
+                        NameBook
+                    </th>
+                    <th></th>
+                    <th>
+                        Author
+                    </th>
+                    <th>
+                        PublishingHouse
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Количество
+                    </th>
+                    <th>
+                        Стоимость
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    int i = 1;
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @i
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NameBook)
+                            </td>
+                            <td class="image">
+                                <img height="100" src="../@item.ImgURL" alt="">
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Author)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PublishingHouse)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Price)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Counter)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AllPrice)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item">Delete</a>
+                            </td>
+                        </tr>
+                        i += 1;
+                    }
+                }
+                <tr>
+                    <td colspan="4"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

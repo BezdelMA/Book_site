@@ -1,0 +1,31 @@
+﻿@model book_site.ViewModel.ReviewsViewModel
+
+<h4>Добавление нового отзыва</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddReviews">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="User" value="@User.Identity" />
+                <input type="hidden" asp-for="UserName" class="form-control" value="@User.Identity.Name"/>
+            <div class="form-group">
+                <label asp-for="TitleReviews" class="control-label mt-1"></label>
+                <input asp-for="TitleReviews" class="form-control" />
+                <span asp-validation-for="TitleReviews" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BodyReviews" class="control-label mt-1"></label>
+                <textarea rows="10" asp-for="BodyReviews" class="form-control"></textarea>
+                <span asp-validation-for="BodyReviews" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-success mt-1" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-primary mt-1" >Назад</a>
+</div>
+

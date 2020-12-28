@@ -15,11 +15,16 @@
         </div>
         <div class="content-top-new-all">
             @{
+                int i = 0;
                 foreach (Book book in Model.NewBooks)
                 {
-                    @Html.Partial("Partial/BookPreview", book)
+                    if (i >= 4)
+                        break;
+                    else
+                        @await Html.PartialAsync("Partial/BookPreview", book)
+                    i++;
                 }
-            }
+             }
         </div>
     </div>
     <hr>
@@ -38,9 +43,14 @@
         </div>
         <div class="content-top-discount-all">
             @{
+                i = 0;
                 foreach (Book book in Model.StockBooks)
                 {
-                    @Html.Partial("Partial/BookPreview", book)
+                    if (i >= 4)
+                        break;
+                    else
+                        @await Html.PartialAsync("Partial/BookPreview", book)
+                    i++;
                 }
             }
         </div>
@@ -61,9 +71,14 @@
         </div>
         <div class="content-top-popular-all">
             @{
-                foreach (Book book in Model.FavoriteBooks)
+                i = 0;
+                foreach (Book item in Model.FavoriteBooks)
                 {
-                    @Html.Partial("Partial/BookPreview", book)
+                    if (i >= 4)
+                        break;
+                    else
+                        @await Html.PartialAsync("Partial/BookPreview", item)
+                    i++;
                 }
             }
         </div>

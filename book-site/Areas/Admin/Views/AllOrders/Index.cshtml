@@ -1,0 +1,95 @@
+﻿@model IEnumerable<book_site.Areas.Admin.ViewModel.AllOrdersViewModel>
+
+@{
+    Layout = "_Layout";
+}
+
+@{
+    if (ViewBag.Title != null)
+    {
+        <div>@ViewBag.Title</div>
+    }
+}
+
+<a class="btn btn-primary" asp-action="AllOrdersWithfilter" asp-route-filter="Новый">Новые</a>
+<a class="btn btn-primary" asp-action="AllOrdersWithfilter" asp-route-filter="На исполнении">На исполнении</a>
+<a class="btn btn-primary" asp-action="AllOrdersWithfilter" asp-route-filter="Выполнен">Выполнен</a>
+<a class="btn btn-primary" asp-action="Index">Показать все</a>
+
+<table class="table__basket">
+    <thead>
+        <tr>
+            <th>
+                Номер заказа
+            </th>
+            <th>
+                ID клиента
+            </th>
+            <th>
+                Имя клиента
+            </th>
+            <th>
+                Адрес доставки
+            </th>
+            <th>
+                Телефон клиента
+            </th>
+            <th>
+                Email клиента
+            </th>
+            <th>
+                Дата заказа
+            </th>
+            <th>
+                Стоимость
+            </th>
+            <th>
+                Статус
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    <a asp-action="AllOrdersUser" asp-route-UserId="@item.UserId">
+                        @Html.DisplayFor(modelItem => item.UserId)
+                    </a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdressString)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOrder)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AllPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Изменить</a> |
+                    <a asp-action="OrderDetails" asp-route-id="@item.Id">Детали</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a> |
+                    <a asp-action="Execution" asp-route-id="@item.Id">На исполнение</a> |
+                    <a asp-action="Complete" asp-route-id="@item.Id">Выполнен</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

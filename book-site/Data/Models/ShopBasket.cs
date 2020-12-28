@@ -11,11 +11,8 @@ namespace book_site.Data.Models
     public class ShopBasket
     {
         private readonly AppDBContent appDBContent;
-        
-        public ShopBasket(AppDBContent _appDBContent)
-        {
-            appDBContent = _appDBContent;
-        }
+
+        public ShopBasket(AppDBContent _appDBContent) => appDBContent = _appDBContent;
 
         public string BasketBookId { get; set; }
         public List<BookBasket> ListBookBasket { get; set; }
@@ -25,10 +22,10 @@ namespace book_site.Data.Models
             get
             {
                 int sum = 0;
-                if(ListBookBasket.Count>0)
+                if(ListBookBasket != null & ListBookBasket.Count>0)
                 {
                     foreach (var item in ListBookBasket)
-                        sum += item.Price;
+                        sum += item.Price * Counter;
                 }
                 return sum;
             }
@@ -70,9 +67,9 @@ namespace book_site.Data.Models
         {
             var items = appDBContent.BookBaskets.Where(obj => obj.BasketBookId == BasketBookId);
             bool flag = false;
-            foreach(var item in items)
+            foreach (var item in items)
             {
-                if(item.Book == book)
+                if (item.Book == book)
                 {
                     item.Counter += 1;
                     flag = true;

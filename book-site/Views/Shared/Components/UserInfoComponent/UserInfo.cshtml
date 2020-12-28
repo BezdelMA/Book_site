@@ -1,0 +1,9 @@
+﻿<div class="authorization">
+    <a asp-controller="PersonalAccount" asp-action="Index">
+        <span>@User.Identity.Name</span>
+    </a>
+    <span>/</span>
+    <a asp-controller="Account" asp-action="Logout">
+        <span>Выход</span>
+    </a>
+</div>

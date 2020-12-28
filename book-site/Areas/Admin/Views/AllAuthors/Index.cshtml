@@ -1,0 +1,43 @@
+﻿@model IEnumerable<book_site.Areas.Admin.ViewModel.AllAuthorsViewModel>
+
+<p>
+    <a asp-action="Create">Доавить нового автора</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NameAuthor)
+            </th>
+            <th>
+                Список книг автора
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameAuthor)
+            </td>
+            <td>
+                @foreach (var book in item.BooksAuthor)
+                {
+                    <a href="#"> @book.NameBook |</a>
+                }
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Редактировать</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

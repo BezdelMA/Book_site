@@ -29,5 +29,29 @@ namespace book_site.Data.Repository
             }
             return _authors;
         }
+
+        public void AddAuthor(string nameAuthor)
+        {
+            appDBContent.Authors.Add(new Author
+            {
+                NameAuthor = nameAuthor,
+                NormalizedNameAuthor = nameAuthor.ToUpper()
+            });
+            appDBContent.SaveChanges();
+        }
+
+        public void RemoveAuthor(Author author)
+        {
+            appDBContent.Remove(author);
+            appDBContent.SaveChanges();
+        }
+
+        public void EditAuthor(Author author)
+        {
+            var _author = appDBContent.Authors.FirstOrDefault(a => a.Id == author.Id);
+            appDBContent.Remove(_author);
+            appDBContent.Add(author);
+            appDBContent.SaveChanges();
+        }
     }
 }

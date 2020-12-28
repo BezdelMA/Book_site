@@ -10,13 +10,17 @@
     <link rel="stylesheet" href="~/css/information.css">
     <link rel="stylesheet" href="~/css/product.css">
     <link rel="stylesheet" href="~/css/basket.css">
+    <link rel="stylesheet" href="~/css/reviews.css">
+    @*<link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />*@
 </head>
 <body>
-    @Html.Partial("Partial/Header")
-    <div>
-        @RenderBody()
-    </div>
-    @Html.Partial("Partial/Footer")
-    <script src="~/js/script.js"></script>
+    <article>
+        <partial name="Partial/Header" />
+        <div>
+            @RenderBody()
+        </div>
+        <partial name="Partial/Footer" />
+    </article>
+    <script src="~/js/script.js" asp-append-version="true"></script>
 </body>
 </html>

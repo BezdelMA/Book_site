@@ -1,0 +1,72 @@
+﻿@model IEnumerable<book_site.ViewModel.DetailOrderViewModel>
+
+@{
+    Layout = "_Layout";
+}
+<h4>@ViewBag.Title</h4>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    № п/п
+                </th>
+                <th>
+                    Наименование
+                </th>
+                <th></th>
+                <th>
+                    Автор
+                </th>
+                <th>
+                    Издательство
+                </th>
+                <th>
+                    Цена
+                </th>
+                <th>
+                    Количество
+                </th>
+                <th>
+                    Стоимость
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int i = 1;
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @i
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NameBook)
+                        </td>
+                        <td class="image">
+                            <img height="100" src="../@item.ImgURL" alt="">
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Author)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PublishingHouse)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Counter)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AllPrice)
+                        </td>
+                    </tr>
+                    i += 1;
+                }
+            }
+        </tbody>
+    </table>
+    <a asp-action="UserOrders" class="btn btn-primary btn-lg btn-block">Назад к списку заказов</a>
+</div>
