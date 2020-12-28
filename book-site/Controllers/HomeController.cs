@@ -1,6 +1,7 @@
 ﻿using book_site.Data.Interfaces;
 using book_site.Data.Models;
 using book_site.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace book_site.Controllers
         private readonly IBooksGenre _booksGenre;
         private readonly IBooksAuthor _booksAuthor;
 
-        public HomeController (IBooks books, IBooksGenre booksGenre, IBooksAuthor booksAuthor)
+        public HomeController(IBooks books, IBooksGenre booksGenre, IBooksAuthor booksAuthor)
         {
             _books = books;
             _booksGenre = booksGenre;
@@ -44,6 +45,32 @@ namespace book_site.Controllers
                 obj.FavoriteBooks = _books.GetFavoriteBooks;
                 return View(obj);
             }
+        }
+
+        public IActionResult AboutUs()
+        {
+            return View();
+        }
+
+        public IActionResult Pay()
+        {
+            return View();
+        }
+        
+        public IActionResult Wholesale()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public IActionResult Loyalty()
+        {
+            return View();
+        }
+
+        public IActionResult Error404()
+        {
+            return View();
         }
     }
 }

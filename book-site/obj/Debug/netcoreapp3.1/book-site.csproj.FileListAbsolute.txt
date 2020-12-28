@@ -370,3 +370,8 @@ D:\Обучение\C#\Book_site\book-site\obj\Debug\netcoreapp3.1\Razor\Views\P
 D:\Обучение\C#\Book_site\book-site\obj\Debug\netcoreapp3.1\Razor\Views\PersonalAccount\UserOrders.cshtml.g.cs
 D:\Обучение\C#\Book_site\book-site\obj\Debug\netcoreapp3.1\Razor\Views\PersonalAccount\DetailsOrder.cshtml.g.cs
 D:\Обучение\C#\Book_site\book-site\obj\Debug\netcoreapp3.1\book-site.MvcApplicationPartsAssemblyInfo.cache
+D:\Обучение\C#\Book_site\book-site\obj\Debug\netcoreapp3.1\Razor\Views\Home\AboutUs.cshtml.g.cs
+D:\Обучение\C#\Book_site\book-site\obj\Debug\netcoreapp3.1\Razor\Views\Home\Pay.cshtml.g.cs
+D:\Обучение\C#\Book_site\book-site\obj\Debug\netcoreapp3.1\Razor\Views\Home\Loyalty.cshtml.g.cs
+D:\Обучение\C#\Book_site\book-site\bin\Debug\netcoreapp3.1\web.config
+D:\Обучение\C#\Book_site\book-site\obj\Debug\netcoreapp3.1\Razor\Views\Home\Error404.cshtml.g.cs

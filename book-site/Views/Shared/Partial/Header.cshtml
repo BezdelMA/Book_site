@@ -8,16 +8,16 @@
         <a class="slogan" href="~/Home/Index">
             <span>Официальный магазин книг г. Подольск</span>
         </a>
-        <a class="first-menu-content" href="information.html">
+        <a class="first-menu-content" asp-controller="Home" asp-action="AboutUs">
             <span>О нас</span>
         </a>
-        <a class="first-menu-content" href="information.html">
+        <a class="first-menu-content" asp-controller="Home" asp-action="Pay">
             <span>Доставка и оплата</span>
         </a>
-        <a class="first-menu-content" href="information.html">
+        <a class="first-menu-content" asp-controller="Home" asp-action="Wholesale">
             <span>Оптовым клиентам</span>
         </a>
-        <a class="first-menu-content" href="information.html">
+        <a class="first-menu-content" asp-controller="Home" asp-action="Loyalty">
             <span>Программа лояльности</span>
         </a>
     </div>
@@ -50,9 +50,9 @@
         <a href="~/Catalog/Books/Stock">Акции</a>
         <a href="~/Catalog/Books/New">Новинки</a>
         <a href="~/Catalog/Books/Favorite">Бестселлеры</a>
-        <a href="catalog.html">Подборки</a>
-        <a href="catalog.html">Рекомендации</a>
-        <a href="catalog.html">Авторы</a>
+        <a asp-controller="Home" asp-action="Error404">Подборки</a>
+        <a asp-controller="Home" asp-action="Error404">Рекомендации</a>
+        <a asp-controller="Home" asp-action="Error404">Авторы</a>
         <a asp-controller="Reviews" asp-action="Index">Отзывы</a>
     </nav>
     <hr>
