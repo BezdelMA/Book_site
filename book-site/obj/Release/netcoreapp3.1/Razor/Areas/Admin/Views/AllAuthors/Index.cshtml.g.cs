@@ -26,8 +26,15 @@ using book_site.Data.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "D:\Обучение\C#\Book_site\book-site\Areas\Admin\Views\_ViewImports.cshtml"
+using book_site.Areas.Admin.ViewModel;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2b178abc4203e3b65d342cca463da987b96cb228", @"/Areas/Admin/Views/AllAuthors/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3ee052529db1176371dd07fb861da2f292b9d732", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"111f79dc007dbd3cfd25a7f388a2338dd5cc7afa", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_AllAuthors_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<book_site.Areas.Admin.ViewModel.AllAuthorsViewModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Create", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -58,7 +65,7 @@ using book_site.Data.Models;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("\r\n<p>\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2b178abc4203e3b65d342cca463da987b96cb2284112", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2b178abc4203e3b65d342cca463da987b96cb2284305", async() => {
                 WriteLiteral("Доавить нового автора");
             }
             );
@@ -139,7 +146,7 @@ using book_site.Data.Models;
 #line hidden
 #nullable disable
             WriteLiteral("            </td>\r\n            <td>\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2b178abc4203e3b65d342cca463da987b96cb2287822", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2b178abc4203e3b65d342cca463da987b96cb2288015", async() => {
                 WriteLiteral("Редактировать");
             }
             );
@@ -170,7 +177,7 @@ using book_site.Data.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral(" |\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2b178abc4203e3b65d342cca463da987b96cb2289993", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2b178abc4203e3b65d342cca463da987b96cb22810186", async() => {
                 WriteLiteral("Удалить");
             }
             );

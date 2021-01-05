@@ -26,8 +26,15 @@ using book_site.Data.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "D:\Обучение\C#\Book_site\book-site\Areas\Admin\Views\_ViewImports.cshtml"
+using book_site.Areas.Admin.ViewModel;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Areas/Admin/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3ee052529db1176371dd07fb861da2f292b9d732", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"111f79dc007dbd3cfd25a7f388a2338dd5cc7afa", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

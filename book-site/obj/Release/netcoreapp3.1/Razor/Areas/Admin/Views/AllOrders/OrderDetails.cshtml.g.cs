@@ -26,8 +26,15 @@ using book_site.Data.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "D:\Обучение\C#\Book_site\book-site\Areas\Admin\Views\_ViewImports.cshtml"
+using book_site.Areas.Admin.ViewModel;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"59c9c6cea34b256c93a53802ab7a25252fe64bbd", @"/Areas/Admin/Views/AllOrders/OrderDetails.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3ee052529db1176371dd07fb861da2f292b9d732", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"111f79dc007dbd3cfd25a7f388a2338dd5cc7afa", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_AllOrders_OrderDetails : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<book_site.Areas.Admin.ViewModel.OrderDetailsViewModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Edit", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -186,7 +193,7 @@ WriteAttributeValue("", 1490, item.ImgURL, 1490, 12, false);
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                            </td>\r\n                            <td>\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "59c9c6cea34b256c93a53802ab7a25252fe64bbd9182", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "59c9c6cea34b256c93a53802ab7a25252fe64bbd9375", async() => {
                 WriteLiteral("Edit");
             }
             );
@@ -217,7 +224,7 @@ WriteAttributeValue("", 1490, item.ImgURL, 1490, 12, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral(" |\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "59c9c6cea34b256c93a53802ab7a25252fe64bbd11379", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "59c9c6cea34b256c93a53802ab7a25252fe64bbd11572", async() => {
                 WriteLiteral("Details");
             }
             );
@@ -248,7 +255,7 @@ WriteAttributeValue("", 1490, item.ImgURL, 1490, 12, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral(" |\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "59c9c6cea34b256c93a53802ab7a25252fe64bbd13583", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "59c9c6cea34b256c93a53802ab7a25252fe64bbd13776", async() => {
                 WriteLiteral("Delete");
             }
             );

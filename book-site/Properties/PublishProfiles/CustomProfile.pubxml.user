@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Этот файл используется процессом публикации или упаковки вашего веб-проекта. Можно настроить поведение этого процесса,
+изменив этот файл MSBuild. Подробности см. на странице https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1KNkwiQylE+TcLKs+XQFgAAAAAACAAAAAAAQZgAAAAEAACAAAAD0zftZBCGUuPrJrM6uG5MBiKBtpAz1t5XGr7b/7xEEbAAAAAAOgAAAAAIAACAAAABUfhOqixZkvzpdSSC7LnRN+WuiLRTvdnEgr4PXvg5Z+iAAAAC/HyzzPejIZPogIH5ZCHewe4E6DbCJl0K5K+pzY/IOrEAAAAD0RYAGZInJ63V7Fe6n3FAyq1Vng7L+Pt32VuLwnRkF89OWDjG/25FtzzirODnKqP3kx5GBH3jsGvtITOMACbum</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <EFMigrations Include="book_site.Data.AppDBContent">
+      <Value>Data Source=37.140.192.20%3bInitial Catalog=u1254105_book-site%3bUser ID=u1254105_admin%3bPassword=p1c1TB4i%3bConnect Timeout=30%3bEncrypt=False%3bTrustServerCertificate=False%3bApplicationIntent=ReadWrite%3bMultiSubnetFailover=False%3bMultipleActiveResultSets=True</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,11 @@
+﻿@model IEnumerable<book_site.Data.Models.Author>
+
+    <div class="d-flex flex-wrap justify-content-between">
+
+        @foreach (var item in Model)
+        {
+        <div class="p-2">
+            <a asp-controller="Catalog" asp-action="Search" asp-route-search="@item.NormalizedNameAuthor">@item.NormalizedNameAuthor</a>
+        </div>
+        }
+    </div>

@@ -1,0 +1,8 @@
+{
+  "ConnectionStrings": {
+    //"DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=book_site;Trusted_Connection=True;MultipleActiveResultSets=true"
+    //"DefaultConnection": "Server=tcp:mybookserver.database.windows.net,1433;Initial Catalog=book_site_DataBase;Persist Security Info=False;User ID=BezdelMA;Password=p1c1TB4i;MultipleActiveResultSets=True;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+    //"DefaultConnection": "Server=37.140.192.20/MSSQLSERVER2008;Initial Catalog=u1254105_book-site;Persist Security Info=False;User ID=u1254105_admin;Password=p1c1TB4i;MultipleActiveResultSets=true;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+    "DefaultConnection": "Data Source=37.140.192.20;Initial Catalog=u1254105_book-site;User ID=u1254105_admin;Password=p1c1TB4i;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;MultipleActiveResultSets=True"
+  }
+}

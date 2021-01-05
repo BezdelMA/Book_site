@@ -130,5 +130,11 @@ namespace book_site.Controllers
             obj.Authors = _booksAuthor.AllAuthors;
             return View("Books", obj);
         }
+
+        public IActionResult AuthorsList()
+        {
+            IEnumerable<Author> authors = _booksAuthor.AllAuthors;
+            return View(authors);
+        }
     }
 }

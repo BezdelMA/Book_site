@@ -1,0 +1,12 @@
+﻿@model FileViewModel
+
+<form asp-controller="Home" asp-action="LoadEksmo" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="FileName" class="control-label"></label>
+        <input type="file" asp-for="FileName"/>
+        <span asp-validation-for="FileName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Загрузить" class="btn btn-success" />
+    </div>
+</form>

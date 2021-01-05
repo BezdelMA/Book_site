@@ -3,6 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>book_site</RootNamespace>
+    <AspNetCoreModuleName>AspNetCoreModule</AspNetCoreModuleName>
+    <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+    <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +16,7 @@
   <ItemGroup>
     <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
     <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="EPPlus" Version="5.5.0" />
     <PackageReference Include="jQuery" Version="3.5.1" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
@@ -33,4 +37,8 @@
     <None Include="wwwroot\css\main.css" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\file\" />
+  </ItemGroup>
+  
 </Project>

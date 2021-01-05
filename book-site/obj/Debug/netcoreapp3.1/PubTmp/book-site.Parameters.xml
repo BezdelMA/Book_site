@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="podolsk-knigi.ru" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\Обучение\\C\#\\Book_site\\book-site\\obj\\Debug\\netcoreapp3\.1\\PubTmp\\Out\\$" />
+  </parameter>
+  <parameter name="book_site.Data.AppDBContent" description="" value="Data Source=37.140.192.20;Initial Catalog=u1254105_book-site;User ID=u1254105_admin;Password=p1c1TB4i;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;MultipleActiveResultSets=True" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^D:\\Обучение\\C\#\\Book_site\\book-site\\obj\\Debug\\netcoreapp3\.1\\PubTmp\\EFSQLScripts\\book_site\.Data\.AppDBContent\.sql$" />
+  </parameter>
+</parameters>
