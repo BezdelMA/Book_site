@@ -1,6 +1,0 @@
-{
-  "ConnectionStrings": {
-    //"DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=book_site;Trusted_Connection=True;MultipleActiveResultSets=true"
-    "DefaultConnection": "Server=tcp:mybookserver.database.windows.net,1433;Initial Catalog=book_site_DataBase;Persist Security Info=False;User ID=BezdelMA;Password=p1c1TB4i;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
-  }
-}
